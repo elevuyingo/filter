@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/style.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" name="search" id="search" placeholder="Search Name">
+    <table>
+        <thead>
+            <th>customer code</th>
+            <th>customer name</th>
+            <th>Date/Time</th>
+            <th>paiement Mode</th>
+            <th>customer code</th>
+            <th>customer name</th>
+            <th>customer code</th>
+            <th>customer name</th>
+        </thead>
+        <tbody>
+            <tr>
+                <td>2358</td>
+                <td>olivier</td>
+                <td>12/02/2021</td>
+                <td>OrangeMony</td>
+                <td>2358</td>
+                <td>olivier</td>
+                <td>12/02/2021</td>
+                <td>OrangeMony</td>
+            </tr>
+
+            <tr>
+                <td>789</td>
+                <td id="nom">Richard</td>
+                <td>12/02/2021</td>
+                <td>OrangeMony</td>
+                <td>2358</td>
+                <td>olivier</td>
+                <td>12/02/2021</td>
+                <td>OrangeMony</td>
+            </tr>
+
+            <tr>
+                <td>2358</td>
+                <td id="nom">Hanri</td>
+                <td>12/02/2021</td>
+                <td>OrangeMony</td>
+                <td>2358</td>
+                <td>olivier</td>
+                <td>12/02/2021</td>
+                <td>OrangeMony</td>
+            </tr>
+
+            <tr>
+                <td>2358</td>
+                <td id="nom">Bienfait</td>
+                <td>12/02/2021</td>
+                <td>OrangeMony</td>
+                <td>2358</td>
+                <td>olivier</td>
+                <td>12/02/2021</td>
+                <td>OrangeMony</td>
+            </tr>
+
+            <tr>
+                <td>2358</td>
+                <td id="nom">Tonto</td>
+                <td>12/02/2021</td>
+                <td>OrangeMony</td>
+                <td>2358</td>
+                <td>olivier</td>
+                <td>12/02/2021</td>
+                <td>OrangeMony</td>
+            </tr>
+        </tbody>
+    </table>
+    <script>
+        const searchInput = document.getElementById("search");
+        const rows = document.querySelectorAll("tbody tr");
+        searchInput.addEventListener("keyup", function (event){
+            const q = event.target.value.toLowerCase();
+
+            rows.forEach(element => {
+                if(element.querySelectorAll("td")[1].textContent.toLowerCase().startsWith(q)){
+                    element.style.display = " "; 
+                }
+                else
+                {
+                    element.style.display = "none";
+                }
+                
+            });
+            // rows.forEach((row) => {
+            //     row.querySelector("td").textContent.toLowerCase().startsWith(q)
+            //        ? (row.style.display = " ")
+            //        :(row.style.display = "none");
+            // });
+        });
+    </script>
+</body>
+</html>
